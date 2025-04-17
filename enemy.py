@@ -14,7 +14,7 @@ class Enemy(pygame.sprite.Sprite):
         self.dir = pygame.math.Vector2()
         self.health = 60
         self.frame = 0
-        self.animationspeed = 0.3
+        self.animationspeed = 0.08
         self.speed = 1
         self.izopos = pygame.math.Vector2()
         self.images = images
@@ -42,6 +42,7 @@ class Enemy(pygame.sprite.Sprite):
             if "attack" not in self.status:
                 self.status += " attack"
                 self.roarsound.play()
+                self.roarsound.set_volume(0.1)
         if self.dir.x > 0:
             self.status = "right"
         elif self.dir.x < 0:

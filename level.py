@@ -30,6 +30,7 @@ class Level:
     def map (self):
         self.currenttext = None
         self.newareasound.play()
+        self.newareasound.set_volume(0.1)
         for i, row in enumerate(self.settings.map[self.currentlevel]):
             for j, col in enumerate(row):
                 if col == "x":
@@ -45,6 +46,7 @@ class Level:
         self.currenttext = text
         self.textbackground = background
         self.deathsound.play()
+        self.deathsound.set_volume(0.1)
 
 
 
@@ -60,6 +62,7 @@ class Level:
         if self.currentlevel == len(self.settings.map):
             self.gameover("VICTORY ACHIEVED")
             self.bossoutsound.play()
+            self.bossoutsound.set_volume(0.1)
         else:
             self.map()
 

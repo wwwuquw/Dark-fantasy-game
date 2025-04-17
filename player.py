@@ -31,9 +31,9 @@ class Player(pygame.sprite.Sprite):
             if enemy.rect.collidepoint(key):
                 distance = pygame.math.Vector2(enemy.rect.left - self.rect.left, enemy.rect.top - self.rect.top).magnitude()
                 if distance < self.rect.width*1.5:
-                    enemy.health -=10
+                    enemy.health -=12
                     self.attacksound.play()
-
+                    self.attacksound.set_volume(0.1)
                     if enemy.health <= 0:
                         enemy.onedeathmethod()
                         enemy.kill()
