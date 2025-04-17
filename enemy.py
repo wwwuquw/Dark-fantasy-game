@@ -42,7 +42,7 @@ class Enemy(pygame.sprite.Sprite):
             if "attack" not in self.status:
                 self.status += " attack"
                 self.roarsound.play()
-                self.roarsound.set_volume(0.1)
+                self.roarsound.set_volume(0.07)
         if self.dir.x > 0:
             self.status = "right"
         elif self.dir.x < 0:
